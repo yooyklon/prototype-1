@@ -8,19 +8,18 @@ import Daemon from './Classes/Daemon';
 export default function createCharacter(name, type) {
   switch (type) {
     case 'Bowman':
-      return new Bowman(name, type, 100, 1, 25, 25);
+      return new Bowman(name, type);
     case 'Swordsman':
-      return new Swordsman(name, type, 100, 1, 40, 10);
+      return new Swordsman(name, type);
     case 'Magician':
-      return new Magician(name, type, 100, 1, 10, 40);
+      return new Magician(name, type);
     case 'Undead':
-      return new Undead(name, type, 100, 1, 25, 25);
+      return new Undead(name, type);
     case 'Zombie':
-      return new Zombie(name, type, 100, 1, 40, 10);
+      return new Zombie(name, type);
     case 'Daemon':
-      return new Daemon(name, type, 100, 1, 10, 40);
+      return new Daemon(name, type);
     default:
-      break;
+      throw new Error('Некорректно введён класс');
   }
-  return null;
 }
